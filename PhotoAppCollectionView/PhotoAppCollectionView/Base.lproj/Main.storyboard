@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SnC-Cu-nrb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PhotoApp-->
+        <scene sceneID="5mC-94-SNW">
+            <objects>
+                <collectionViewController id="CvA-cv-xDe" customClass="PhotosCollectionViewController" customModule="PhotoAppCollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hhQ-tW-KfW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O8e-i8-dZn">
+                            <size key="itemSize" width="123" height="123"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="photoCell" id="5I8-cI-vvB" customClass="PhotoCell" customModule="PhotoAppCollectionView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="123" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="hRa-JB-4AG">
+                                    <rect key="frame" x="0.0" y="0.0" width="123" height="123"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="dog14" translatesAutoresizingMaskIntoConstraints="NO" id="m3v-Yc-jsQ">
+                                            <rect key="frame" x="2" y="2" width="127" height="127"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="dogImageView" destination="m3v-Yc-jsQ" id="KbH-LP-4b2"/>
+                                    <segue destination="L7R-3F-bto" kind="presentation" identifier="pickPhotoSeque" id="4Yy-G6-Hz4"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="CvA-cv-xDe" id="LME-iu-npk"/>
+                            <outlet property="delegate" destination="CvA-cv-xDe" id="3t4-Rm-cN8"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="PhotoApp" id="dgS-RB-GH9"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oQ1-tn-p7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="502.89855072463774" y="77.678571428571431"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="Yez-Ib-zbf">
+            <objects>
+                <viewController id="L7R-3F-bto" customClass="PhotoViewController" customModule="PhotoAppCollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EgV-IT-uwM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Adr-kw-V91">
+                                <rect key="frame" x="0.0" y="307.5" width="414" height="227"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="227" id="IX0-Dw-dso"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-tu-azw">
+                                <rect key="frame" x="138" y="761" width="138" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system" title="  Нажми меня">
+                                    <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="shareAction:" destination="L7R-3F-bto" eventType="touchUpInside" id="8sW-Jl-fqe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tHg-hQ-2pP"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Adr-kw-V91" firstAttribute="centerY" secondItem="EgV-IT-uwM" secondAttribute="centerY" id="59E-uP-8E5"/>
+                            <constraint firstItem="Adr-kw-V91" firstAttribute="leading" secondItem="tHg-hQ-2pP" secondAttribute="leading" id="9uS-9R-n2M"/>
+                            <constraint firstItem="0Mf-tu-azw" firstAttribute="centerX" secondItem="EgV-IT-uwM" secondAttribute="centerX" id="JRm-mk-83M"/>
+                            <constraint firstItem="tHg-hQ-2pP" firstAttribute="trailing" secondItem="Adr-kw-V91" secondAttribute="trailing" id="fSI-hV-1ZE"/>
+                            <constraint firstItem="tHg-hQ-2pP" firstAttribute="bottom" secondItem="0Mf-tu-azw" secondAttribute="bottom" constant="50" id="gWh-Er-JfK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="Adr-kw-V91" id="u9I-Hr-jn6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lso-8U-9fm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1302.8985507246377" y="77.678571428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vK8-nk-Bah">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SnC-Cu-nrb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kTg-vg-mXa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CvA-cv-xDe" kind="relationship" relationship="rootViewController" id="8xJ-ak-3dW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ejN-aP-6sv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-225" y="78"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dog14" width="640" height="441"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
